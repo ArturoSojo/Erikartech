@@ -68,9 +68,9 @@ export default function Home() {
 
   return (
     <>
-      {/* Custom Cursor */}
+      {/* Custom Cursor - Hidden on mobile */}
       <div
-        className="fixed w-8 h-8 border-2 border-[#FF00D6] rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-150"
+        className="fixed w-8 h-8 border-2 border-[#FF00D6] rounded-full pointer-events-none z-[9999] mix-blend-difference transition-transform duration-150 hidden md:block"
         style={{
           left: `${cursorPosition.x - 16}px`,
           top: `${cursorPosition.y - 16}px`,
@@ -82,18 +82,18 @@ export default function Home() {
         href="https://wa.me/584149231863"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-[9999] group transition-transform hover:scale-110 active:scale-95"
+        className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[9999] group transition-transform hover:scale-110 active:scale-95"
       >
         <div className="relative">
           <div className="absolute inset-0 bg-[#25D366] rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity" />
-          <img src="/icon_whatsapp.png" alt="WhatsApp" className="w-16 h-16 relative z-10" />
+          <img src="/icon_whatsapp.png" alt="WhatsApp" className="w-12 h-12 md:w-16 md:h-16 relative z-10" />
         </div>
       </a>
 
       <div className="min-h-screen bg-[#050514] text-white overflow-x-hidden">
         {/* Sticky Navigation Bar */}
         <nav
-          className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${scrollY > 50 ? "backdrop-blur-xl bg-white/5" : "backdrop-blur-md bg-white/10"
+          className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[calc(100%-2rem)] md:w-auto ${scrollY > 50 ? "backdrop-blur-xl bg-white/5" : "backdrop-blur-md bg-white/10"
             }`}
           style={{
             borderRadius: "9999px",
@@ -101,12 +101,12 @@ export default function Home() {
             boxShadow: "0 8px 32px 0 rgba(0, 194, 255, 0.2)",
           }}
         >
-          <div className="px-8 py-4 flex items-center gap-8">
+          <div className="px-4 md:px-8 py-3 md:py-4 flex items-center justify-between md:gap-8">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 to-[#FF00D6] rounded-lg flex items-center justify-center">
                 <img src="/logo_erikartech.png" alt="Logo ErikarTech" className="w-6 h-6" />
               </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-[#00C2FF] to-[#FF00D6] bg-clip-text text-transparent">
+              <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-[#00C2FF] to-[#FF00D6] bg-clip-text text-transparent">
                 ErikarTech
               </span>
             </div>
@@ -130,11 +130,51 @@ export default function Home() {
               </Button>
             </div>
 
-            <button className="md:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <button className="md:hidden text-white p-1" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </nav>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="fixed top-20 left-4 right-4 z-40 md:hidden backdrop-blur-xl bg-[#050514]/95 border border-white/10 rounded-2xl p-6 space-y-4">
+            <a
+              href="#servicios"
+              className="block text-lg hover:text-[#00C2FF] transition-colors font-mono py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Servicios
+            </a>
+            <a
+              href="#proyectos"
+              className="block text-lg hover:text-[#00C2FF] transition-colors font-mono py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Proyectos
+            </a>
+            <a
+              href="#nosotros"
+              className="block text-lg hover:text-[#00C2FF] transition-colors font-mono py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Nosotros
+            </a>
+            <a
+              href="#contacto"
+              className="block text-lg hover:text-[#00C2FF] transition-colors font-mono py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contacto
+            </a>
+            <Button
+              className="w-full bg-[#FF00D6] hover:bg-[#FF00D6]/90 text-white font-mono shadow-lg shadow-[#FF00D6]/50 mt-4"
+              asChild
+            >
+              <a href="https://wa.me/584149231863" target="_blank" rel="noopener noreferrer">Iniciar Proyecto</a>
+            </Button>
+          </div>
+        )}
 
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center px-4 py-32 overflow-hidden">
@@ -158,7 +198,7 @@ export default function Home() {
                   <span className="text-sm font-mono text-[#00C2FF]">Innovación Digital</span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight text-balance">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
                   <span className="bg-gradient-to-r from-white via-[#00C2FF] to-white bg-clip-text text-transparent">
                     Arquitectos del
                   </span>
@@ -168,7 +208,7 @@ export default function Home() {
                   </span>
                 </h1>
 
-                <p className="text-xl text-gray-400 max-w-xl text-pretty">
+                <p className="text-base md:text-xl text-gray-400 max-w-xl">
                   Transformamos ideas complejas en experiencias web y móviles de alto impacto.
                 </p>
 
@@ -192,10 +232,10 @@ export default function Home() {
               </div>
 
               {/* Right Side - 3D Element */}
-              <div className="relative h-[500px] lg:h-[600px] flex items-center justify-center">
+              <div className="relative h-[300px] sm:h-[400px] lg:h-[600px] flex items-center justify-center">
                 <div
                   ref={sphereRef}
-                  className="w-[400px] h-[400px] relative transition-transform duration-100 ease-out"
+                  className="w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[400px] lg:h-[400px] relative transition-transform duration-100 ease-out"
                   style={{ transformStyle: "preserve-3d" }}
                 >
                   {/* Outer Ring */}
@@ -245,16 +285,16 @@ export default function Home() {
         </section>
 
         {/* Services Section - Bento Grid */}
-        <section id="servicios" className="relative px-4 py-32">
+        <section id="servicios" className="relative px-4 py-16 md:py-32">
           <div className="container mx-auto max-w-7xl">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <div className="text-center mb-8 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 Ecosistema de Soluciones
               </h2>
-              <p className="text-xl text-gray-400 font-mono">Tecnología de vanguardia para líderes digitales</p>
+              <p className="text-base md:text-xl text-gray-400 font-mono">Tecnología de vanguardia para líderes digitales</p>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-4 auto-rows-[200px]">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-auto md:auto-rows-[200px]">
               {/* Large Card - Next.js */}
               <div
                 className="md:col-span-2 md:row-span-2 group relative overflow-hidden rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 p-8 hover:border-[#FF00D6]/50 transition-all duration-500 cursor-pointer"
@@ -268,7 +308,7 @@ export default function Home() {
                     <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00C2FF] to-[#FF00D6] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                       <Code2 className="h-8 w-8 text-white" />
                     </div>
-                    <h3 className="text-3xl font-bold mb-4">Desarrollo Web</h3>
+                    <h3 className="text-xl md:text-3xl font-bold mb-4">Desarrollo Web</h3>
                     <p className="text-gray-400 text-lg">
                       Velocidad extrema y SEO optimizado para líderes de industria.
                     </p>
@@ -293,7 +333,7 @@ export default function Home() {
                     <ShoppingCart className="h-8 w-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">E-commerce</h3>
+                    <h3 className="text-lg md:text-2xl font-bold mb-2">E-commerce</h3>
                     <p className="text-gray-400">Tiendas holográficas de alto rendimiento.</p>
                   </div>
                 </div>
@@ -312,7 +352,7 @@ export default function Home() {
                     <Smartphone className="h-8 w-8 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold mb-2">Aplicaciones Móviles</h3>
+                    <h3 className="text-lg md:text-2xl font-bold mb-2">Aplicaciones Móviles</h3>
                     <p className="text-gray-400">Experiencias nativas multiplataforma.</p>
                   </div>
                 </div>
@@ -322,16 +362,16 @@ export default function Home() {
         </section>
 
         {/* Portfolio Section */}
-        <section id="proyectos" className="relative px-4 py-32 mb-16">
+        <section id="proyectos" className="relative px-4 py-16 md:py-32 mb-8 md:mb-16">
           <div className="container mx-auto max-w-7xl">
-            <div className="text-center mb-32">
-              <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+            <div className="text-center mb-16 md:mb-32">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
                 Innovación en Producción
               </h2>
-              <p className="text-xl text-gray-400 font-mono">Proyectos que definen el futuro</p>
+              <p className="text-base md:text-xl text-gray-400 font-mono">Proyectos que definen el futuro</p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
               {[
                 { title: "FinTech Platform", category: "Next.js App", img: "/modern-fintech-mobile-app-interface.jpg" },
                 { title: "Robust Pickleball", category: "Shopify Store", img: "/robustpickleball.png" },
@@ -350,7 +390,7 @@ export default function Home() {
               ].map((project, i) => (
                 <div
                   key={i}
-                  className="group relative overflow-hidden rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 hover:border-[#FF00D6]/50 transition-all duration-500 cursor-pointer h-[400px]"
+                  className="group relative overflow-hidden rounded-2xl md:rounded-3xl backdrop-blur-xl bg-white/5 border border-white/10 hover:border-[#FF00D6]/50 transition-all duration-500 cursor-pointer h-[280px] sm:h-[350px] md:h-[400px]"
                   style={{
                     boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
                     transform: `translateY(${scrollY * 0.05 * (i % 2 === 0 ? 1 : -1)}px)`,
@@ -364,7 +404,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050514] via-[#050514]/50 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <div className="text-[#00C2FF] font-mono text-sm mb-2">{project.category}</div>
-                    <h3 className="text-2xl font-bold">{project.title}</h3>
+                    <h3 className="text-lg md:text-2xl font-bold">{project.title}</h3>
                   </div>
                 </div>
               ))}
@@ -373,7 +413,7 @@ export default function Home() {
         </section>
 
         {/* Client Benefits Marquee */}
-        <section className="relative py-16 overflow-hidden">
+        <section className="relative py-8 md:py-16 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-[#00C2FF]/10 to-[#FF00D6]/10" />
           <div className="relative">
             <div className="flex animate-marquee whitespace-nowrap">
@@ -391,7 +431,7 @@ export default function Home() {
                 "Carga Ultra-Rápida",
                 "Soporte Premium 24/7",
               ].map((benefit, i) => (
-                <span key={i} className="mx-8 text-4xl font-bold text-white/20 font-mono">
+                <span key={i} className="mx-4 md:mx-8 text-xl md:text-4xl font-bold text-white/20 font-mono">
                   {benefit}
                 </span>
               ))}
@@ -400,41 +440,41 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section id="nosotros" className="relative px-4 py-32">
+        <section id="nosotros" className="relative px-4 py-16 md:py-32">
           <div
-            className="container mx-auto max-w-4xl relative overflow-hidden rounded-[3rem] backdrop-blur-xl bg-white/5 border border-white/10 p-12 md:p-20 text-center"
+            className="container mx-auto max-w-4xl relative overflow-hidden rounded-2xl md:rounded-[3rem] backdrop-blur-xl bg-white/5 border border-white/10 p-6 sm:p-10 md:p-20 text-center"
             style={{
               boxShadow: "0 8px 32px 0 rgba(255, 0, 214, 0.3)",
               background:
                 "radial-gradient(ellipse at center, rgba(255, 0, 214, 0.15) 0%, rgba(0, 194, 255, 0.1) 50%, transparent 100%)",
             }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-[#00C2FF] to-[#FF00D6] bg-clip-text text-transparent">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-8 bg-gradient-to-r from-[#00C2FF] to-[#FF00D6] bg-clip-text text-transparent">
               ¿Listo para el siguiente nivel?
             </h2>
-            <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-gray-300 mb-6 md:mb-12 max-w-2xl mx-auto">
               Transformemos tu visión en una experiencia digital inolvidable
             </p>
             <Button
               size="lg"
-              className="bg-gradient-to-r from-[#FF00D6] to-[#00C2FF] hover:opacity-90 text-white px-12 py-8 text-xl font-mono shadow-2xl hover:shadow-[#FF00D6]/70 transition-all hover:scale-105"
+              className="bg-gradient-to-r from-[#FF00D6] to-[#00C2FF] hover:opacity-90 text-white px-6 md:px-12 py-4 md:py-8 text-base md:text-xl font-mono shadow-2xl hover:shadow-[#FF00D6]/70 transition-all hover:scale-105"
               asChild
             >
-              <a href="https://wa.me/584149231863" target="_blank" rel="noopener noreferrer">Agendar Consultoría Estratégica</a>
+              <a href="https://wa.me/584149231863" target="_blank" rel="noopener noreferrer">Agendar Consultoría</a>
             </Button>
           </div>
         </section>
 
         {/* Contact Form */}
-        <section id="contacto" className="relative px-4 py-32">
+        <section id="contacto" className="relative px-4 py-16 md:py-32">
           <div className="container mx-auto max-w-2xl">
             <div
-              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12"
+              className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl p-6 md:p-12"
               style={{
                 boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
               }}
             >
-              <h3 className="text-3xl font-bold mb-8 text-center">Envianos tu consulta</h3>
+              <h3 className="text-xl md:text-3xl font-bold mb-6 md:mb-8 text-center">Envianos tu consulta</h3>
               <form className="space-y-6" onSubmit={handleSubmit}>
                 {/* Web3Forms Configuration */}
                 <input type="hidden" name="access_key" value="d400eb6a-5015-400e-9f83-f6e2594b477f" />
