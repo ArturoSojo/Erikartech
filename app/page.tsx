@@ -437,7 +437,7 @@ export default function Home() {
               <h3 className="text-3xl font-bold mb-8 text-center">Envianos tu consulta</h3>
               <form className="space-y-6" onSubmit={handleSubmit}>
                 {/* Web3Forms Configuration */}
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                <input type="hidden" name="access_key" value="d400eb6a-5015-400e-9f83-f6e2594b477f" />
                 <input type="hidden" name="subject" value="Nuevo mensaje desde ErikarTech Landing" />
                 <input type="hidden" name="redirect" value="false" />
                 <input type="hidden" name="from_name" value="ErikarTech Contact Form" />
