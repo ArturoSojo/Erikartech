@@ -66,13 +66,13 @@ const CATEGORIES: Category[] = [
         title: 'Aplicaciones Móviles',
         icon: Smartphone,
         options: [
-            { id: 'mvp', label: 'MVP/App Simple', price: 6500, description: 'Producto mínimo viable para validar ideas.' },
-            { id: 'moderate', label: 'App Moderada con Backend', price: 25000, description: 'Funcionalidades complejas y base de datos.' },
-            { id: 'complex', label: 'App Compleja', price: 65000, description: 'Ecosistema completo y escalable.' },
+            { id: 'mvp', label: 'MVP/App Simple', price: 2500, description: 'Producto mínimo viable para validar ideas.' },
+            { id: 'moderate', label: 'App Moderada con Backend', price: 7500, description: 'Funcionalidades complejas y base de datos.' },
+            { id: 'complex', label: 'App Compleja', price: 15000, description: 'Ecosistema completo y escalable.' },
         ],
         extras: [
-            { id: 'login', label: 'Sistema de Login/Perfiles', price: 1500 },
-            { id: 'notifications', label: 'Notificaciones Push/GPS', price: 800 },
+            { id: 'login', label: 'Sistema de Login/Perfiles', price: 500 },
+            { id: 'notifications', label: 'Notificaciones Push/GPS', price: 300 },
         ]
     }
 ]
