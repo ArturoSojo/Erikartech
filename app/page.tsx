@@ -127,7 +127,7 @@ export default function Home() {
                 className="bg-[#FF00D6] hover:bg-[#FF00D6]/90 text-white font-mono shadow-lg shadow-[#FF00D6]/50"
                 asChild
               >
-                <a href="https://wa.me/573043185545" target="_blank" rel="noopener noreferrer">Iniciar Proyecto</a>
+                <a href="#cotizador" target="_blank" rel="noopener noreferrer">Cotizar Proyecto</a>
               </Button>
             </div>
 
