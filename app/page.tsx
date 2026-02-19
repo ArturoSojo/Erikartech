@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Code2, Smartphone, ShoppingCart, Send, Menu, X, Loader2 } from "lucide-react"
 import { toast } from "sonner"
+import ProjectQuoter from "@/components/project-quoter"
 
 export default function Home() {
   const [scrollY, setScrollY] = useState(0)
@@ -79,7 +80,7 @@ export default function Home() {
 
       {/* Floating WhatsApp Button */}
       <a
-        href="https://wa.me/584149231863"
+        href="https://wa.me/573043185545"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[9999] group transition-transform hover:scale-110 active:scale-95"
@@ -126,7 +127,7 @@ export default function Home() {
                 className="bg-[#FF00D6] hover:bg-[#FF00D6]/90 text-white font-mono shadow-lg shadow-[#FF00D6]/50"
                 asChild
               >
-                <a href="https://wa.me/584149231863" target="_blank" rel="noopener noreferrer">Iniciar Proyecto</a>
+                <a href="https://wa.me/573043185545" target="_blank" rel="noopener noreferrer">Iniciar Proyecto</a>
               </Button>
             </div>
 
@@ -171,7 +172,7 @@ export default function Home() {
               className="w-full bg-[#FF00D6] hover:bg-[#FF00D6]/90 text-white font-mono shadow-lg shadow-[#FF00D6]/50 mt-4"
               asChild
             >
-              <a href="https://wa.me/584149231863" target="_blank" rel="noopener noreferrer">Iniciar Proyecto</a>
+              <a href="#cotizador" target="_blank" rel="noopener noreferrer">Cotiza tu proyecto</a>
             </Button>
           </div>
         )}
@@ -218,7 +219,7 @@ export default function Home() {
                     className="bg-[#FF00D6] hover:bg-[#FF00D6]/90 text-white px-8 py-6 text-lg font-mono shadow-2xl shadow-[#FF00D6]/50 hover:shadow-[#FF00D6]/70 transition-all"
                     asChild
                   >
-                    <a href="#proyectos">Ver Nuestro Trabajo</a>
+                    <a href="#cotizador">Calcular presupuesto</a>
                   </Button>
                   <Button
                     size="lg"
@@ -439,6 +440,8 @@ export default function Home() {
           </div>
         </section>
 
+        <ProjectQuoter />
+
         {/* CTA Section */}
         <section id="nosotros" className="relative px-4 py-16 md:py-32">
           <div
@@ -460,7 +463,7 @@ export default function Home() {
               className="bg-gradient-to-r from-[#FF00D6] to-[#00C2FF] hover:opacity-90 text-white px-6 md:px-12 py-4 md:py-8 text-base md:text-xl font-mono shadow-2xl hover:shadow-[#FF00D6]/70 transition-all hover:scale-105"
               asChild
             >
-              <a href="https://wa.me/584149231863" target="_blank" rel="noopener noreferrer">Agendar Consultoría</a>
+              <a href="https://wa.me/573043185545" target="_blank" rel="noopener noreferrer">Agendar Consultoría</a>
             </Button>
           </div>
         </section>
